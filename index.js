@@ -93,7 +93,10 @@ async function GetApiVideo(url) {
 }  
 
 async function initPuppeteer() {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: ["--no-sandbox",
+            "--disable-setuid-sandbox"]
+    });
     this.page = await browser.newPage();
 }
 
@@ -103,4 +106,3 @@ app.listen(port, () => {
         initPuppeteer();
     }
 )
-

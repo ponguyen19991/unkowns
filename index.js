@@ -25,7 +25,7 @@ app.get('/api/courses', (req, res) => {
     res.send(courses)
 })
 
-app.get('/api/links/result', (req, res) => {
+app.get('/links/result', (req, res) => {
     res.send(links)
 })
 

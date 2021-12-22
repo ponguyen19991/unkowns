@@ -25,7 +25,7 @@ app.get('/api/courses', (req, res) => {
     res.send(courses)
 })
 
-app.get('/links/result', (req, res) => {
+app.get('/api/links/result', (req, res) => {
     res.send(links)
 })
 
@@ -40,8 +40,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"); 
     next(); });
 
-app.post('/links',  async (req, res) => {
-    // const schema = {
+app.post('/api/links',  async (req, res) => {
+    // const schema = { 
     //     url: GetApiVideo()
     // }
 
@@ -70,7 +70,7 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(course) 
 })
 
-app.get('/links/result/:id', (req, res) => {
+app.get('/api/links/result/:id', (req, res) => {
     const link = links.find(c => c.id === parseInt(req.params.id))
     if (!links) res.status(404).send('The link with the given ID was not found!!')
     res.send(link) 

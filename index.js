@@ -4,7 +4,7 @@ var cors = require('cors')
 const puppeteer = require('puppeteer')
 
 app.use(express.urlencoded({
-    extended: true
+    extended: false
 }))
 app.use(express.json())
 app.use(
